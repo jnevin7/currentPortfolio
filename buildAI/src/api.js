@@ -1,5 +1,9 @@
 // frontend/src/api.js
-const BASE = ""; // use Vite proxy for /api
+// Local dev: empty string, so requests stay relative and go through Vite's
+// dev proxy (see vite.config.js). Production build: set VITE_API_URL to the
+// deployed backend's URL (e.g. in your host's env var settings) so requests
+// go straight there instead — there's no dev proxy once this is built.
+const BASE = import.meta.env.VITE_API_URL || "";
 
 export function setToken(t) {
   localStorage.setItem("token", t);
@@ -87,7 +91,7 @@ export async function uploadImage(file) {
   const fd = new FormData();
   fd.append("image", file);
 
-  const res = await fetch("/api/upload/image", { method: "POST", headers, body: fd });
+  const res = await fetch(`${BASE}/api/upload/image`, { method: "POST", headers, body: fd });
   if (!res.ok) throw new Error(await res.text());
   return res.json(); // { url, public_id } 
 }
