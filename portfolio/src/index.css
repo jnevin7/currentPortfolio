@@ -1,0 +1,55 @@
+:root {
+  --ink: #2a2420;
+  --ink-soft: #6b6056;
+  --cream: #faf6ef;
+  --cream-deep: #f1e9da;
+  --gold: #b8860b;
+  --gold-deep: #96690a;
+  --border: #e4d9c5;
+
+  font-family: "Georgia", "Iowan Old Style", serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--gold-deep);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
