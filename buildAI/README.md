@@ -6,8 +6,14 @@ GPT-4o vision analysis gives an instant severity read (urgent / review soon / no
 with a structured breakdown, while a human expert claims the report, reviews the AI's
 read, and adds their own assessment before anything gets acted on.
 
-**Live demo:** _add your deployed URL here once hosted (see Deployment below)_
-**Screenshots:** _add a few screenshots or a short GIF of the dashboard, report submission, and expert review panel_
+**Live demo:** [build-ai-green.vercel.app](https://build-ai-green.vercel.app)
+_(backend is on Render's free tier and sleeps after inactivity — first load can take ~30-50s to wake up)_
+
+### Screenshots
+
+| Property owner dashboard | AI triage result |
+| --- | --- |
+| ![Dashboard overview](docs/screenshots/dashboard.jpg) | ![AI assessment of a damp patch](docs/screenshots/ai-assessment.png) |
 
 ## Why this exists
 
