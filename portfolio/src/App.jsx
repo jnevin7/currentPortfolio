@@ -10,12 +10,17 @@ const PROFILE = {
   title: "Full-Stack Developer",
   tagline:
     "I build web apps end to end — from the database up to the UI.", // PLACEHOLDER
-  bio: `Add a few sentences here about your background, what you enjoy
-building, and what you're looking for next (a role, freelance work,
-just showcasing projects — whatever's true for you).`, // PLACEHOLDER
-  email: "your.email@example.com", // PLACEHOLDER
+  bio: `I came to software development after a varied career — financial
+compliance work at Investec, freelance copywriting, and several years
+coaching rowing and surfing — and found that coding suits the way I
+think in a way nothing else has. I've worked through Code College ZA's
+MERN stack, SQL, Java, and Spring curriculum, and BuildAI is where that
+training turned into a real, deployed product: authentication, image
+uploads, AI integration, and production hardening, built and shipped
+end to end. I'm now looking for my first full-time developer role.`,
+  email: "jnevin7@gmail.com",
   github: "https://github.com/jnevin7",
-  linkedin: "https://linkedin.com/in/your-handle", // PLACEHOLDER
+  linkedin: "https://www.linkedin.com/in/7a1/",
 };
 
 const PROJECTS = [
