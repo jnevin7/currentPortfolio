@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_BASE } from '../api.js';
 
 function Auth({ onAuth }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -15,7 +16,7 @@ function Auth({ onAuth }) {
     try {
       setLoading(true);
       setError('');
-      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+      const endpoint = `${API_BASE}${isLogin ? '/api/auth/login' : '/api/auth/register'}`;
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

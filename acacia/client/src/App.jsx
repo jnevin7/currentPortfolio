@@ -3,6 +3,7 @@ import PostFeed from './components/PostFeed.jsx';
 import PostForm from './components/PostForm.jsx';
 import Header from './components/Header.jsx';
 import Auth from './components/Auth.jsx';
+import { API_BASE } from './api.js';
 import './index.css';
 
 const CATEGORIES = ['general', 'news', 'question'];
@@ -32,7 +33,7 @@ function App() {
       setLoading(true); setError(null);
       const params = new URLSearchParams();
       if (filter.category) params.append('category', filter.category);
-      const res = await fetch(`/api/posts?${params}`);
+      const res = await fetch(`${API_BASE}/api/posts?${params}`);
       if (!res.ok) throw new Error();
       setPosts(await res.json());
     } catch {
@@ -58,7 +59,7 @@ function App() {
 
   const handlePost = async (postData) => {
     try {
-      const res = await fetch('/api/posts', {
+      const res = await fetch(`${API_BASE}/api/posts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +77,7 @@ function App() {
 
   const handleReact = async (id) => {
     try {
-      const res = await fetch(`/api/posts/${id}/react`, { method: 'PATCH' });
+      const res = await fetch(`${API_BASE}/api/posts/${id}/react`, { method: 'PATCH' });
       if (!res.ok) throw new Error();
       const updated = await res.json();
       setPosts(prev => prev.map(p => p._id === id ? updated : p));
