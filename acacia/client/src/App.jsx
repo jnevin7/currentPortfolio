@@ -77,7 +77,10 @@ function App() {
 
   const handleReact = async (id) => {
     try {
-      const res = await fetch(`${API_BASE}/api/posts/${id}/react`, { method: 'PATCH' });
+      const res = await fetch(`${API_BASE}/api/posts/${id}/react`, {
+        method: 'PATCH',
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
       if (!res.ok) throw new Error();
       const updated = await res.json();
       setPosts(prev => prev.map(p => p._id === id ? updated : p));
