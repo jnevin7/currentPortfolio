@@ -13,7 +13,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "dermai",
+    folder: "buildai",
     allowed_formats: ["jpg", "jpeg", "png", "webp"],
     transformation: [{ width: 1600, crop: "limit" }], // keep sizes sane
   },
