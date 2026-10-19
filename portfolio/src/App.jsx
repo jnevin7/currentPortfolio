@@ -1,5 +1,6 @@
 import "./App.css";
 import buildaiThumb from "./assets/buildai-thumb.jpg";
+import acaciaThumb from "./assets/acacia-thumb.png";
 
 // ---- EDIT ME: placeholder content ------------------------------------
 // Everything marked PLACEHOLDER below is sample text — swap it for your
@@ -33,7 +34,15 @@ const PROJECTS = [
     demoUrl: "https://build-ai-green.vercel.app",
     codeUrl: "https://github.com/jnevin7/currentPortfolio/tree/main/buildAI",
   },
-  { placeholder: true },
+  {
+    name: "Acacia",
+    description:
+      "A lightweight, text-first social feed built around one idea: most social platforms waste bandwidth nobody asked for. A hard 280-character cap, a visible byte-size badge on every post, and no images or media to load.",
+    image: acaciaThumb,
+    tags: ["React", "Node.js", "MongoDB", "JWT"],
+    demoUrl: "https://acacia-gray.vercel.app",
+    codeUrl: "https://github.com/jnevin7/currentPortfolio/tree/main/acacia",
+  },
   { placeholder: true },
 ];
 // ------------------------------------------------------------------------
