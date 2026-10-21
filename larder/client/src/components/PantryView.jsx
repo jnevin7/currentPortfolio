@@ -32,6 +32,16 @@ function PantryView() {
     }
   };
 
+  const toggleFavourite = async (item) => {
+    const next = !item.favourite;
+    setItems(prev => prev.map(i => i.name === item.name ? { ...i, favourite: next } : i));
+    try {
+      await api.setFavourite(item.name, next);
+    } catch {
+      setItems(prev => prev.map(i => i.name === item.name ? { ...i, favourite: !next } : i));
+    }
+  };
+
   const addStaple = async () => {
     const name = newItem.trim();
     if (!name) return;
@@ -51,7 +61,8 @@ function PantryView() {
       <h2>My pantry</h2>
       <p className="pantry-intro">
         Everything you've ticked across any recipe lives here. Add staples you
-        always have on hand so new recipes pre-tick them automatically.
+        always have on hand so new recipes pre-tick them automatically, and
+        star a few favourites to get recipe suggestions based on them.
       </p>
 
       <div className="pantry-add">
@@ -68,7 +79,9 @@ function PantryView() {
       {error && <p className="error">{error}</p>}
 
       {items.length === 0 ? (
-        <p className="empty">Nothing here yet — tick ingredients on a recipe, or add a staple above.</p>
+        <p className="empty">
+          Nothing here yet — tick ingredients on a recipe, star a favourite, or add a staple above.
+        </p>
       ) : (
         <ul className="pantry-list">
           {items.map(item => (
@@ -77,6 +90,14 @@ function PantryView() {
                 <input type="checkbox" checked={item.have} onChange={() => toggle(item)} />
                 <span>{item.name}</span>
               </label>
+              <button
+                className={`favourite-star ${item.favourite ? 'favourite-star-active' : ''}`}
+                onClick={() => toggleFavourite(item)}
+                title={item.favourite ? 'Unfavourite' : 'Favourite'}
+                aria-label={item.favourite ? `Unfavourite ${item.name}` : `Favourite ${item.name}`}
+              >
+                {item.favourite ? '★' : '☆'}
+              </button>
             </li>
           ))}
         </ul>

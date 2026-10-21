@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { api } from '../api.js';
+import { api, normalizeIngredient } from '../api.js';
 
 // Strip Spoonacular's HTML-ish instructions down to plain paragraphs.
 function cleanInstructions(html) {
@@ -38,7 +38,7 @@ function RecipeDetail({ recipeId, onBack }) {
 
         const initialHave = {};
         recipeData.ingredients.forEach(ing => {
-          const key = ing.name.trim().toLowerCase();
+          const key = normalizeIngredient(ing.name);
           // Only pre-tick when the pantry explicitly says so — an
           // ingredient we've never seen before stays unticked, not assumed
           // missing or assumed owned.

@@ -1,12 +1,10 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js';
 import pantryRoutes from './routes/pantry.js';
 import recipeRoutes from './routes/recipes.js';
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;

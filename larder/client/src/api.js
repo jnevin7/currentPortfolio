@@ -6,6 +6,11 @@ const API_BASE = import.meta.env.VITE_API_URL || '';
 const TOKEN_KEY = 'larder_token';
 const USERNAME_KEY = 'larder_username';
 
+// Matches the server's PantryItem normalization exactly — this is the join
+// key between pantry records and recipe ingredient names, so client and
+// server have to agree on it.
+export const normalizeIngredient = (name) => name.trim().toLowerCase();
+
 export const getToken = () => localStorage.getItem(TOKEN_KEY) || '';
 export const getUsername = () => localStorage.getItem(USERNAME_KEY) || '';
 
@@ -53,7 +58,10 @@ export const api = {
 
   searchRecipes: (q) => request(`/api/recipes/search?q=${encodeURIComponent(q)}`),
   getRecipe: (id) => request(`/api/recipes/${id}`),
+  getRandomRecipes: (number = 6) => request(`/api/recipes/random?number=${number}`),
+  getSuggestions: () => request('/api/recipes/suggestions'),
 
   getPantry: () => request('/api/pantry'),
   setPantryItem: (name, have) => request('/api/pantry', { method: 'PATCH', body: { name, have } }),
+  setFavourite: (name, favourite) => request('/api/pantry/favourite', { method: 'PATCH', body: { name, favourite } }),
 };

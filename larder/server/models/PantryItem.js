@@ -13,6 +13,10 @@ const pantryItemSchema = new mongoose.Schema({
   // applied consistently everywhere this is written or read.
   name: { type: String, required: true, trim: true, lowercase: true },
   have: { type: Boolean, required: true, default: true },
+  // Independent of `have` — you can favourite an ingredient you love
+  // cooking with before you've ever ticked it as "in stock". Powers the
+  // "suggestions based on your favourites" feature.
+  favourite: { type: Boolean, required: true, default: false },
 }, { timestamps: true });
 
 pantryItemSchema.index({ userId: 1, name: 1 }, { unique: true });
