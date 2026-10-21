@@ -15,11 +15,15 @@ const PROFILE = {
   bio: `I came to software development after a varied career — financial
 compliance work at Investec, freelance copywriting, and several years
 coaching rowing and surfing — and found that coding suits the way I
-think in a way nothing else has. I've worked through Code College ZA's
-MERN stack, SQL, Java, and Spring curriculum, and BuildAI is where that
-training turned into a real, deployed product: authentication, image
-uploads, AI integration, and production hardening, built and shipped
-end to end. I'm now looking for my first full-time developer role.`,
+think in a way nothing else has. I worked through Code College ZA's
+MERN stack, SQL, Java, and Spring curriculum, and the three projects
+below are where that training turned into real, deployed products, each
+one built and shipped end to end: auth, a real database, and production
+hardening on all of them, not just a local demo. BuildAI leans into AI
+integration and image handling, Acacia is built around a deliberately
+narrow set of constraints, and Larder works through a genuinely tricky
+piece of state — remembering what you have, not just what a recipe
+calls for. I'm now looking for my first full-time developer role.`,
   email: "jnevin7@gmail.com",
   github: "https://github.com/jnevin7",
   linkedin: "https://www.linkedin.com/in/7a1/",
