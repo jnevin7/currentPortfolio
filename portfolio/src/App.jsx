@@ -1,6 +1,7 @@
 import "./App.css";
 import buildaiThumb from "./assets/buildai-thumb.jpg";
 import acaciaThumb from "./assets/acacia-thumb.png";
+import larderThumb from "./assets/larder-thumb.jpg";
 
 // ---- EDIT ME: placeholder content ------------------------------------
 // Everything marked PLACEHOLDER below is sample text — swap it for your
@@ -42,6 +43,15 @@ const PROJECTS = [
     tags: ["React", "Node.js", "MongoDB", "JWT"],
     demoUrl: "https://acacia-gray.vercel.app",
     codeUrl: "https://github.com/jnevin7/currentPortfolio/tree/main/acacia",
+  },
+  {
+    name: "Larder",
+    description:
+      "A recipe app with a pantry that remembers. Search a recipe, tick off the ingredients you already have, and the shopping list only ever shows what's actually missing \u2014 persisted per-user, not per-recipe.",
+    image: larderThumb,
+    tags: ["React", "Node.js", "MongoDB", "JWT", "Spoonacular API"],
+    demoUrl: "https://larder-six-mauve.vercel.app",
+    codeUrl: "https://github.com/jnevin7/currentPortfolio/tree/main/larder",
   },
   { placeholder: true },
 ];
